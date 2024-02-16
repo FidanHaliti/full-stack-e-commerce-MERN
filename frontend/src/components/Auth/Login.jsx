@@ -52,18 +52,19 @@ const Login = () => {
             <span>
               Username or email address <span className="required">*</span>
             </span>
-            <input type="text" name="email" onChange={handleInputChange} />
+            <input type="text" name="email" onChange={handleInputChange}  required/>
           </label>
         </div>
         <div>
           <label>
             <span>
-              Password <span className="required">*</span>
+              Password <span className="required" >*</span>
             </span>
             <input
               type="password"
               name="password"
               onChange={handleInputChange}
+              required
             />
           </label>
         </div>
