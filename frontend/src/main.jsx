@@ -9,13 +9,16 @@ import "./index.css";
 import ScrollToTop from "./components/ScrollToTop";
 
 
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   <BrowserRouter>
   <ScrollToTop />
     <CartProvider>
-      <Layout>
+  
+      <Layout >
         <App />
       </Layout>
+   
     </CartProvider>
   </BrowserRouter>
 );

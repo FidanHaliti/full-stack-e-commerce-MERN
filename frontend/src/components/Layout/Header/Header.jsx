@@ -1,13 +1,43 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import Proptypes from "prop-types";
 import { Link, useLocation } from "react-router-dom";
 import { CartContext } from "../../../context/CartProvider";
 import "./Header.css";
+import { message } from "antd";
+
+
+
+
 
 const Header = ({ setIsSearchShow }) => {
+  const [logoImg, setLogoImg] = useState([])
+  const apiUrl = import.meta.env.VITE_API_BASE_URL;
   const { cartItems } = useContext(CartContext);
+  
   const user = localStorage.getItem("user");
   const { pathname } = useLocation();
+
+  
+
+  useEffect(() => {
+    const fetchLogos = async () => {
+      try {
+        const response = await fetch(`${apiUrl}/api/logos`);
+  
+        if (response.ok) {
+          const data = await response.json();
+          setLogoImg(data);
+        } else {
+          message.error("Veri getirme başarısız.");
+        }
+      } catch (error) {
+        console.log("Veri hatası:", error);
+      } 
+    };
+    fetchLogos();
+  },[apiUrl])
+  
+
 
   return (
     <header>
@@ -27,9 +57,15 @@ const Header = ({ setIsSearchShow }) => {
               <i className="bi bi-list" id="btn-menu"></i>
             </div>
             <div className="header-left">
-              <Link to={"/"} className="logo">
-                LOGO
-              </Link>
+           
+           <Link to={"/"} className="logo" >
+           {logoImg && logoImg.length > 0 && logoImg[0].img && (
+             <img
+               style={{ width: "14vh", height: "13vh", marginLeft: "10vh" }}
+               src={logoImg[0].img}
+             />
+           )}
+         </Link>
             </div>
             <div className="header-center" id="sidebar">
               <nav className="navigation">

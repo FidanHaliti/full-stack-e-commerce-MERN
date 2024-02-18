@@ -1,8 +1,9 @@
 import React from "react";
 import Policy from "../Policy/Policy";
 import "./Footer.css";
+import { Link } from "react-router-dom";
 
-const Footer = () => {
+const Footer = ({logoImg}) => {
   return (
     <React.Fragment>
       <Policy />
@@ -71,9 +72,9 @@ const Footer = () => {
             <div className="footer-widgets">
               <div className="brand-info">
                 <div className="footer-logo">
-                  <a href="index.html" className="logo">
-                    LOGO
-                  </a>
+                 
+               LOGO
+             
                 </div>
                 <div className="footer-desc">
                   <p>

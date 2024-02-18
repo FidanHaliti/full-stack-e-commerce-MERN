@@ -16,7 +16,7 @@ const Sliders = () => {
   return (
     <section className="slider">
       <div className="slider-elements">
-        {currentSlide === 0 && <SliderItem imageSrc="img/slider/slider1.jpg" />}
+        {currentSlide === 0 && <SliderItem imageSrc="img/slider/CPG-trends-2022.jpeg" />}
         {currentSlide === 1 && <SliderItem imageSrc="img/slider/slider2.jpg" />}
         {currentSlide === 2 && <SliderItem imageSrc="img/slider/slider3.jpg" />}
         <div className="slider-buttons">

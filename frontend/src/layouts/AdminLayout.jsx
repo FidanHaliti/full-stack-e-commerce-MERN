@@ -115,6 +115,30 @@ const AdminLayout = ({ children }) => {
     },
     {
       key: "12",
+      icon: <AppstoreOutlined />,
+      label: "Logo",
+      path: "/",
+      children: [
+        {
+          key: "13",
+          label: "My Logo",
+          path: "/admin/logos",
+          onClick: () => {
+            navigate(`/admin/logos`);
+          },
+        },
+        {
+          key: "14",
+          label: "New Create Logos",
+          path: "/admin/logos/create",
+          onClick: () => {
+            navigate("/admin/logos/create");
+          },
+        },
+      ],
+    },
+    {
+      key: "15",
       icon: <ShoppingCartOutlined />,
       label: "Siparişler",
       path: "/admin/orders",
@@ -123,7 +147,7 @@ const AdminLayout = ({ children }) => {
       },
     },
     {
-      key: "13",
+      key: "16",
       icon: <RollbackOutlined />,
       label: "Ana Sayfaya Git",
       onClick: () => {
@@ -191,7 +215,6 @@ const AdminLayout = ({ children }) => {
                 }}
               >
                 <h2>{getPageTitle()}</h2>
-              
               </div>
             </Header>
             <Content>

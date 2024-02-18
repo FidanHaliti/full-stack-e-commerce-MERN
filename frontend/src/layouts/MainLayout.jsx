@@ -8,6 +8,8 @@ import Dialog from "../components/Modals/Dialog/Dialog";
 const MainLayout = ({ children }) => {
   const [isSearchShow, setIsSearchShow] = useState(false);
   const [isDialogShow, setIsDialogShow] = useState(false);
+  const [logoImg] = useState([])
+  
 
   useEffect(() => {
     const dialogStatus = localStorage.getItem("dialog")
@@ -25,7 +27,7 @@ const MainLayout = ({ children }) => {
       <Search isSearchShow={isSearchShow} setIsSearchShow={setIsSearchShow} />
       <Header setIsSearchShow={setIsSearchShow} />
       {children}
-      <Footer />
+      <Footer logoImg={logoImg} />
     </div>
   );
 };
