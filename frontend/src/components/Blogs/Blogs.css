@@ -5,7 +5,24 @@
   
   .blogs .blog-list {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 30px;
   }
+
+  @media screen and (max-width: 960px) {
+    .blogs .blog-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    
+  }
+  @media screen and (max-width: 660px) {
+    .blogs .blog-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      
+    }
+    
+  }
+
   /*! blogs end  */

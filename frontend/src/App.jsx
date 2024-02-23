@@ -1,12 +1,13 @@
 import { Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import ShopPage from "./pages/ShopPage";
-import BlogPage from "./pages/BlogPage";
+// import BlogPage from "./pages/BlogPage";
 import ContactPage from "./pages/ContactPage";
 import CartPage from "./pages/CartPage";
 import AuthPage from "./pages/AuthPage";
 import ProductDetailsPage from "./pages/ProductDetailsPage";
 import BlogDetailsPage from "./pages/BlogDetailsPage";
+
 
 import "./App.css";
 import UserPage from "./pages/Admin/UserPage";
@@ -25,18 +26,21 @@ import DashboardPage from "./pages/Admin/DashboardPage";
 import LogoPage from "./pages/Admin/Logos/LogoPage";
 import CreateLogoPage from "./pages/Admin/Logos/CreateLogoPage";
 import UpdateLogoPage from "./pages/Admin/Logos/UpdateLogoPage";
+import CreateBlogPage from "./pages/Admin/Blogs/CreateBlogPage";
+import BlogPage from "./pages/Admin/Blogs/BlogPage";
+
 
 function App() {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/shop" element={<ShopPage />} />
-      <Route path="/blog" element={<BlogPage />} />
+      <Route path="/blog" element={<BlogPage />} /> 
       <Route path="/contact" element={<ContactPage />} />
       <Route path="/cart" element={<CartPage />} />
       <Route path="/auth" element={<AuthPage />} />
       <Route path="/product/:id" element={<ProductDetailsPage />} />
-      <Route path="/blog/:id" element={<BlogDetailsPage />} />
+       <Route path="/blog/:id" element={<BlogDetailsPage />} /> 
       <Route path="/sucess" element={<Success />} />
       <Route path="/admin/*">
         <Route path="users" element={<UserPage />} />
@@ -47,6 +51,9 @@ function App() {
         <Route path="products" element={<ProductPage />} />
         <Route path="products/create" element={<CreateProductPage />} />
         <Route path="products/update/:id" element={<UpdateProductPage />} />
+        <Route path="blogs" element={<BlogPage />} />
+        <Route path="blogs/create" element={<CreateBlogPage />} />
+        
         <Route path="coupons" element={<CouponPage />} />
         <Route path="coupons/create" element={<CreateCouponPage />} />
         <Route path="coupons/update/:id" element={<UpdateCouponPage />} />

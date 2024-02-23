@@ -1,14 +1,14 @@
 import Reviews from "../Reviews/Reviews";
 import "./BlogDetails.css";
 
-const BlogDetails = () => {
+const BlogDetails = ({singleBlog, setSingleBlog}) => {
   return (
     <section className="single-blog">
       <div className="container">
         <article>
           <figure>
             <a href="#">
-              <img src="/img/blogs/blog1.jpg" alt="" />
+              <img src={singleBlog.img} alt="" />
             </a>
           </figure>
           <div className="blog-wrapper">
@@ -23,7 +23,7 @@ const BlogDetails = () => {
                 <a href="#">products</a>,<a href="#">coats</a>
               </div>
             </div>
-            <h1 className="blog-title">The Best Products That Shape Fashion</h1>
+            <h1 className="blog-title">{singleBlog.name}</h1>
             <div className="blog-content">
               <p>
                 Donec rhoncus quis diam sit amet faucibus. Vivamus pellentesque,

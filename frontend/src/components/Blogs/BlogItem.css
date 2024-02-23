@@ -2,8 +2,10 @@
   display: flex;
 }
 
+
 .blog-list .blog-image img {
   width: 100%;
+  max-height: 160px;
 }
 
 .blog-item .blog-info {

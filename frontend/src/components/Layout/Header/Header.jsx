@@ -61,7 +61,7 @@ const Header = ({ setIsSearchShow }) => {
            <Link to={"/"} className="logo" >
            {logoImg && logoImg.length > 0 && logoImg[0].img && (
              <img
-               style={{ width: "14vh", height: "13vh", marginLeft: "10vh" }}
+               style={{ width: "16vh", maxHeight: "13vh", }}
                src={logoImg[0].img}
              />
            )}

@@ -106,6 +106,30 @@ const AdminLayout = ({ children }) => {
     },
     {
       key: "11",
+      icon: <LaptopOutlined />,
+      label: "Blogs",
+      path: "/",
+      children: [
+        {
+          key: "12",
+          label: "Blog list",
+          path: "/admin/blogs",
+          onClick: () => {
+            navigate(`/admin/blogs`);
+          },
+        },
+        {
+          key: "13",
+          label: "Create new blog",
+          path: "/admin/blogs/create",
+          onClick: () => {
+            navigate("/admin/blogs/create");
+          },
+        },
+      ],
+    },
+    {
+      key: "14",
       icon: <UserOutlined />,
       label: "Kullanıcı Listesi",
       path: "/admin/users",
@@ -114,13 +138,13 @@ const AdminLayout = ({ children }) => {
       },
     },
     {
-      key: "12",
+      key: "15",
       icon: <AppstoreOutlined />,
       label: "Logo",
       path: "/",
       children: [
         {
-          key: "13",
+          key: "16",
           label: "My Logo",
           path: "/admin/logos",
           onClick: () => {
@@ -128,7 +152,7 @@ const AdminLayout = ({ children }) => {
           },
         },
         {
-          key: "14",
+          key: "17",
           label: "New Create Logos",
           path: "/admin/logos/create",
           onClick: () => {
@@ -138,7 +162,7 @@ const AdminLayout = ({ children }) => {
       ],
     },
     {
-      key: "15",
+      key: "18",
       icon: <ShoppingCartOutlined />,
       label: "Siparişler",
       path: "/admin/orders",
@@ -147,7 +171,7 @@ const AdminLayout = ({ children }) => {
       },
     },
     {
-      key: "16",
+      key: "19",
       icon: <RollbackOutlined />,
       label: "Ana Sayfaya Git",
       onClick: () => {

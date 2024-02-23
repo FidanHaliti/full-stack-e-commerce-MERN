@@ -11,9 +11,31 @@ import {
 } from "recharts";
 
 const DashboardPage = () => {
-    const [dataSource, setDataSource] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [dataSource, setDataSource] = useState([]);
   const MY_STRIPE_SECRET_KEY = import.meta.env.VITE_API_STRIPE_SECRET_KEY;
+
+  const [products, setProducts] = useState([]);
+
+  const apiUrl = import.meta.env.VITE_API_BASE_URL;
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await fetch(`${apiUrl}/api/products`);
+
+        if (response.ok) {
+          const data = await response.json();
+          setProducts(data);
+        } else {
+          message.error("Veri getirme başarısız.");
+        }
+      } catch (error) {
+        console.log("Veri hatası:", error);
+      }
+    };
+    fetchProducts();
+  }, [apiUrl]);
+
   const productSalesData = [
     { name: "Ocak", satilanUrunSayisi: 10 },
     { name: "Şubat", satilanUrunSayisi: 15 },
@@ -34,8 +56,6 @@ const DashboardPage = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      setLoading(true);
-
       try {
         const response = await fetch(
           `https://api.stripe.com/v1/payment_intents`,
@@ -55,30 +75,38 @@ const DashboardPage = () => {
         }
       } catch (error) {
         console.log("Veri hatası:", error);
-      } finally {
-        setLoading(false);
       }
     };
     fetchData();
   }, [MY_STRIPE_SECRET_KEY]);
 
+  const totalAmount = () => {
+    const amount = dataSource.reduce((total, item) => item.amount + total, 0);
+    return amount.toFixed(2);
+  };
 
+
+
+  
   return (
     <div>
       <Row gutter={16}>
         <Col span={8}>
           <Card>
-            <Statistic title="Toplam Ürün Satışı" value={dataSource.amount} />
+            <Statistic title="Toplam Ürün Satışı" value={products?.length} />
           </Card>
         </Col>
         <Col span={8}>
           <Card>
-            <Statistic title="Toplam Müşteri Sayısı" value={50} />
+            <Statistic
+              title="Toplam Müşteri Sayısı"
+              value={dataSource?.length}
+            />
           </Card>
         </Col>
         <Col span={8}>
           <Card>
-            <Statistic title="Toplam Gelir" value={3000} prefix="$" />
+            <Statistic title="Toplam Gelir" value={(totalAmount() / 100)} prefix="$" />
           </Card>
         </Col>
       </Row>

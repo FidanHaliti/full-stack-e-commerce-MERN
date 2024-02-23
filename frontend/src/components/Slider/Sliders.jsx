@@ -1,6 +1,7 @@
 import { useState } from "react";
 import SliderItem from "./SliderItem";
 import "./Sliders.css";
+import { useEffect } from "react";
 
 const Sliders = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -12,6 +13,12 @@ const Sliders = () => {
   const prevSlide = () => {
     setCurrentSlide((prevSlide) => (prevSlide - 1 + 3) % 3);
   };
+
+  useEffect(() => {
+    const interval = setInterval(nextSlide, 6000); // Change slide every 3 seconds
+
+    return () => clearInterval(interval); // Cleanup function to clear the interval on unmount
+  }, []);
 
   return (
     <section className="slider">

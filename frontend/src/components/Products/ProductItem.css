@@ -18,6 +18,7 @@
   .products .product-item img {
     width: 100%;
     transition: 0.3s ease-in-out all;
+    max-height: 340px;
   }
   
   .products .product-item .img1:hover {
