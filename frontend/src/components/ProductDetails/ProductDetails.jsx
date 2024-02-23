@@ -1,4 +1,4 @@
-import Breadcrumb from "./Breadcrumb/breadcrumb";
+import Breadcrumb from "./Breadcrumb/Breadcrumb";
 import Gallery from "./Gallery/Gallery";
 import PropTypes from "prop-types";
 import Info from "./Info/Info";
@@ -17,7 +17,10 @@ const ProductDetails = ({ singleProduct, setSingleProduct }) => {
               <Info singleProduct={singleProduct} />
             </main>
           </div>
-          <Tabs singleProduct={singleProduct} setSingleProduct={setSingleProduct}/>
+          <Tabs
+            singleProduct={singleProduct}
+            setSingleProduct={setSingleProduct}
+          />
         </div>
       </div>
     </section>
