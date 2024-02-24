@@ -72,7 +72,7 @@ router.delete("/:productId", async (req, res) => {
   try {
     const productId = req.params.productId;
 
-    const deletedProduct = await Product.findByIdAndRemove(productId);
+    const deletedProduct = await Product.findByIdAndDelete(productId);
 
     if (!deletedProduct) {
       return res.status(404).json({ error: "Product not found." });
@@ -88,15 +88,15 @@ router.delete("/:productId", async (req, res) => {
 // ne baze te emrit thirre produktin
 router.get("/search/:productName", async (req, res) => {
   try {
-  const productName = req.params.productName;
-  const product= await Product.find({
-    name : { $regex: productName, $options: "i"},
-  })  
-  res.status(200).json(product)
+    const productName = req.params.productName;
+    const product = await Product.find({
+      name: { $regex: productName, $options: "i" },
+    });
+    res.status(200).json(product);
   } catch (error) {
     console.log(error);
     res.status(500).json({ error: "Server error." });
   }
-})
+});
 
 module.exports = router;

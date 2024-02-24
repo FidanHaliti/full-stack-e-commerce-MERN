@@ -9,6 +9,8 @@ import { message } from "antd";
 
 
 
+
+
 const Header = ({ setIsSearchShow }) => {
   const [logoImg, setLogoImg] = useState([])
   const apiUrl = import.meta.env.VITE_API_BASE_URL;
@@ -61,7 +63,7 @@ const Header = ({ setIsSearchShow }) => {
            <Link to={"/"} className="logo" >
            {logoImg && logoImg.length > 0 && logoImg[0].img && (
              <img
-               style={{ width: "16vh", maxHeight: "13vh", }}
+               style={{ width: "13vh", maxHeight: "11vh", marginLeft: "2rem" }}
                src={logoImg[0].img}
              />
            )}

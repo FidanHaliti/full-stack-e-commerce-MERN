@@ -76,7 +76,7 @@ router.delete("/:blogId", async (req, res) => {
   try {
     const blogId = req.params.blogId;
 
-    const deletedBlog = await Blog.findByIdAndRemove(blogId);
+    const deletedBlog = await Blog.findByIdAndDelete(blogId);
 
     if (!deletedBlog) {
       return res.status(404).json({ error: "Category not found." });

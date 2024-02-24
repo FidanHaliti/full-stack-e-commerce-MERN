@@ -76,7 +76,7 @@ router.delete("/:logoId", async (req, res) => {
   try {
     const logoId = req.params.logoId;
 
-    const deletedLogo = await Logo.findByIdAndRemove(logoId);
+    const deletedLogo = await Logo.findByIdAndDelete(logoId);
 
     if (!deletedLogo) {
       return res.status(404).json({ error: "Logo not found." });
