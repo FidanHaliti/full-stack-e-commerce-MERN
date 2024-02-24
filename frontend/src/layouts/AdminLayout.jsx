@@ -35,12 +35,12 @@ const AdminLayout = ({ children }) => {
     {
       key: "2",
       icon: <AppstoreOutlined />,
-      label: "Kategoriler",
+      label: "Categories",
       path: "/",
       children: [
         {
           key: "3",
-          label: "Kategori Listesi",
+          label: "Category List",
           path: "/admin/categories",
           onClick: () => {
             navigate(`/admin/categories`);
@@ -48,7 +48,7 @@ const AdminLayout = ({ children }) => {
         },
         {
           key: "4",
-          label: "Yeni Kategori Oluştur",
+          label: "Create new Category",
           path: "/admin/categories/create",
           onClick: () => {
             navigate("/admin/categories/create");
@@ -59,12 +59,12 @@ const AdminLayout = ({ children }) => {
     {
       key: "5",
       icon: <LaptopOutlined />,
-      label: "Ürünler",
+      label: "Products",
       path: "/",
       children: [
         {
           key: "6",
-          label: "Ürün Listesi",
+          label: "Products List",
           path: "/admin/products",
           onClick: () => {
             navigate(`/admin/products`);
@@ -72,7 +72,7 @@ const AdminLayout = ({ children }) => {
         },
         {
           key: "7",
-          label: "Yeni Ürün Oluştur",
+          label: "Create Products List",
           path: "/admin/products/create",
           onClick: () => {
             navigate("/admin/products/create");
@@ -83,12 +83,12 @@ const AdminLayout = ({ children }) => {
     {
       key: "8",
       icon: <BarcodeOutlined />,
-      label: "Kuponlar",
+      label: "Coupon",
       path: "/admin/coupons",
       children: [
         {
           key: "9",
-          label: "Kupon Listesi",
+          label: "Coupon List",
           path: "/admin/coupons",
           onClick: () => {
             navigate(`/admin/coupons`);
@@ -96,7 +96,7 @@ const AdminLayout = ({ children }) => {
         },
         {
           key: "10",
-          label: "Yeni Kupon Oluştur",
+          label: "Create Coupon",
           path: "/admin/coupons/create",
           onClick: () => {
             navigate("/admin/coupons/create");
@@ -131,7 +131,7 @@ const AdminLayout = ({ children }) => {
     {
       key: "14",
       icon: <UserOutlined />,
-      label: "Kullanıcı Listesi",
+      label: "User List",
       path: "/admin/users",
       onClick: () => {
         navigate(`/admin/users`);
@@ -153,7 +153,7 @@ const AdminLayout = ({ children }) => {
         },
         {
           key: "17",
-          label: "New Create Logos",
+          label: "New Create Logo",
           path: "/admin/logos/create",
           onClick: () => {
             navigate("/admin/logos/create");
@@ -164,7 +164,7 @@ const AdminLayout = ({ children }) => {
     {
       key: "18",
       icon: <ShoppingCartOutlined />,
-      label: "Siparişler",
+      label: "Orderer",
       path: "/admin/orders",
       onClick: () => {
         navigate(`/admin/orders`);
@@ -173,7 +173,7 @@ const AdminLayout = ({ children }) => {
     {
       key: "19",
       icon: <RollbackOutlined />,
-      label: "Ana Sayfaya Git",
+      label: "Go to Home Page",
       onClick: () => {
         window.location.href = "/";
       },

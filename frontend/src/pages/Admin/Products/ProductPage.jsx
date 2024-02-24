@@ -10,7 +10,7 @@ const ProductPage = () => {
 
   const columns = [
     {
-      title: "Product Görseli",
+      title: "Product Image",
       dataIndex: "img",
       key: "img",
       render: (imgSrc) => <img src={imgSrc[0]} alt="Image" width={100} />,
@@ -22,19 +22,19 @@ const ProductPage = () => {
       render: (text) => <b>{text}</b>,
     },
     {
-      title: "Kategori",
+      title: "Category",
       dataIndex: "categoryName",
       key: "categoryName",
       render: (text) => <span>{text}</span>,
     },
     {
-      title: "Fiyat",
+      title: "Price",
       dataIndex: "price",
       key: "price",
       render: (text) => <span>{text.current.toFixed(2)}</span>,
     },
     {
-      title: "İndirim",
+      title: "Discount",
       dataIndex: "price",
       key: "price",
       render: (text) => <span>%{text.discount}</span>,
@@ -49,17 +49,17 @@ const ProductPage = () => {
             type="primary"
             onClick={() => navigate(`/admin/products/update/${record._id}`)}
           >
-            Güncelle
+            Edit
           </Button>
           <Popconfirm
-            title="Kategoriyi Sil"
-            description="Kategoriyi silmek istediğinizden emin misiniz?"
+            title="Product delete"
+            description="Are you sure you want to delete the product?"
             okText="Yes"
             cancelText="No"
             onConfirm={() => deleteProduct(record._id)}
           >
             <Button type="primary" danger>
-              Sil
+              Delete
             </Button>
           </Popconfirm>
         </Space>
@@ -74,12 +74,12 @@ const ProductPage = () => {
       });
 
       if (response.ok) {
-        message.success("Kategori başarıyla silindi.");
+        message.success("The product has been deleted successfully.");
         setDataSource((prevProducts) => {
           return prevProducts.filter((product) => product._id !== productId);
         });
       } else {
-        message.error("Silme işlemi başarısız.");
+        message.error("Deletion failed.");
       }
     } catch (error) {
       console.log("Silme hatası:", error);
@@ -97,7 +97,7 @@ const ProductPage = () => {
         ]);
 
         if (!categoriesResponse.ok || !productsResponse.ok) {
-          message.error("Veri getirme başarısız.");
+          message.error("Data fetch failed.");
         }
 
         const [categoriesData, productsData] = await Promise.all([

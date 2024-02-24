@@ -56,13 +56,13 @@ const CreateProductPage = () => {
       });
 
       if (response.ok) {
-        message.success("Ürün başarıyla oluşturuldu.");
+        message.success("The product has been created successfully.");
         form.resetFields();
       } else {
-        message.error("Ürün oluşturulurken bir hata oluştu.");
+        message.error("An error occurred while creating the product.");
       }
     } catch (error) {
-      console.log("Ürün oluşturma hatası:", error);
+      console.log("Product creation error:", error);
     } finally {
       setLoading(false);
     }
@@ -73,7 +73,7 @@ const CreateProductPage = () => {
     <Spin spinning={loading}>
       <Form name="basic" layout="vertical" onFinish={onFinish} form={form}>
         <Form.Item
-          label="Ürün İsmi"
+          label="Product Name"
           name="name"
           rules={[
             {
@@ -85,7 +85,7 @@ const CreateProductPage = () => {
           <Input />
         </Form.Item>
         <Form.Item
-          label="Ürün Kategorisi"
+          label="Product Category"
           name="category"
           rules={[
             {
@@ -103,7 +103,7 @@ const CreateProductPage = () => {
           </Select>
         </Form.Item>
         <Form.Item
-          label="Fiyat"
+          label="Price"
           name="current"
           rules={[
             {
@@ -115,7 +115,7 @@ const CreateProductPage = () => {
           <InputNumber />
         </Form.Item>
         <Form.Item
-          label="İndirim Oranı"
+          label="Discount rate"
           name="discount"
           rules={[
             {
@@ -127,7 +127,7 @@ const CreateProductPage = () => {
           <InputNumber />
         </Form.Item>
         <Form.Item
-          label="Ürün Açıklaması"
+          label="Description"
           name="description"
           rules={[
             {
@@ -144,53 +144,53 @@ const CreateProductPage = () => {
           />
         </Form.Item>
         <Form.Item
-          label="Ürün Görselleri (Linkler)"
+          label="Product Images (Links)"
           name="img"
           rules={[
             {
               required: true,
-              message: "Lütfen en az 4 ürün görsel linki girin!",
+              message: "Please enter at least 4 product image links!",
             },
           ]}
         >
           <Input.TextArea
-            placeholder="Her bir görsel linkini yeni bir satıra yazın."
+            placeholder="Write each image link on a new line."
             autoSize={{ minRows: 4 }}
           />
         </Form.Item>
         <Form.Item
-          label="Ürün Renkleri (RGB Kodları)"
+          label="Product Colors (RGB Codes)"
           name="colors"
           rules={[
             {
               required: true,
-              message: "Lütfen en az 1 ürün rengi girin!",
+              message: "Please enter at least 1 product color!",
             },
           ]}
         >
           <Input.TextArea
-            placeholder="Her bir RGB kodunu yeni bir satıra yazın."
+            placeholder="Write each RGB code on a new line."
             autoSize={{ minRows: 4 }}
           />
         </Form.Item>
         <Form.Item
-          label="Ürün Bedenleri"
+          label="Product Sizes"
           name="sizes"
           rules={[
             {
               required: true,
-              message: "Lütfen en az 1 ürün beden ölçüsü girin!",
+              message: "Please enter at least 1 item size!",
             },
           ]}
         >
           <Input.TextArea
-            placeholder="Her bir beden ölçüsünü yeni bir satıra yazın."
+            placeholder="Write each body size on a new line."
             autoSize={{ minRows: 4 }}
           />
         </Form.Item>
 
         <Button type="primary" htmlType="submit">
-          Oluştur
+          Create
         </Button>
       </Form>
     </Spin>

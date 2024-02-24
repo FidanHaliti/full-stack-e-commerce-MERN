@@ -26,7 +26,7 @@ const LogoPage = () => {
             type="primary"
             onClick={() => navigate(`/admin/logos/update/${record._id}`)}
           >
-            Düzenle
+            Edit
           </Button>
           <Popconfirm
             title="Kategoriyi Sil"
