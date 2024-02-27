@@ -27,7 +27,7 @@ const DashboardPage = () => {
           const data = await response.json();
           setProducts(data);
         } else {
-          message.error("Veri getirme başarısız.");
+          message.error("Veri getirme Data fetch failed..");
         }
       } catch (error) {
         console.log("Veri hatası:", error);
@@ -71,7 +71,7 @@ const DashboardPage = () => {
           const { data } = await response.json();
           setDataSource(data);
         } else {
-          message.error("Veri getirme başarısız.");
+          message.error("Data fetch failed.");
         }
       } catch (error) {
         console.log("Veri hatası:", error);
@@ -85,33 +85,34 @@ const DashboardPage = () => {
     return amount.toFixed(2);
   };
 
-
-
-  
   return (
     <div>
       <Row gutter={16}>
         <Col span={8}>
           <Card>
-            <Statistic title="Toplam Ürün Satışı" value={products?.length} />
+            <Statistic title="Total Product Sales" value={products?.length} />
           </Card>
         </Col>
         <Col span={8}>
           <Card>
             <Statistic
-              title="Toplam Müşteri Sayısı"
+              title="Total Customer Number"
               value={dataSource?.length}
             />
           </Card>
         </Col>
         <Col span={8}>
           <Card>
-            <Statistic title="Toplam Gelir" value={(totalAmount() / 100)} prefix="$" />
+            <Statistic
+              title="Total Revenue"
+              value={totalAmount() / 100}
+              prefix="$"
+            />
           </Card>
         </Col>
       </Row>
       <Card style={{ marginTop: "20px" }}>
-        <h2>Son Aydaki Ürün Satış Artışı</h2>
+        <h2>Product Sales Increase in the Last Month</h2>
         <LineChart
           width={600}
           height={600}
@@ -132,7 +133,7 @@ const DashboardPage = () => {
         </LineChart>
       </Card>
       <Card style={{ marginTop: "20px" }}>
-        <h2>Son Aydaki Müşteri Artışı</h2>
+        <h2>Customer Increase in the Last Month</h2>
         <LineChart
           width={600}
           height={300}

@@ -29,14 +29,14 @@ const Login = () => {
       if (response.ok) {
         const data = await response.json();
         localStorage.setItem("user", JSON.stringify(data));
-        message.success("Giriş başarılı.");
+        message.success("Login successful.");
         if (data.role === "admin") {
           window.location.href = "/admin";
         } else {
           navigate("/");
         }
       } else {
-        message.error("Giriş başarısız.");
+        message.error("Login failed.");
       }
     } catch (error) {
       console.log("Giriş hatası:", error);
