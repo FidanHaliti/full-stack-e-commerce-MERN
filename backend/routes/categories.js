@@ -48,7 +48,7 @@ router.get("/:categoryId", async (req, res) => {
   }
 });
 
-// Kategori güncelleme (Update)
+// Category update (Update)
 router.put("/:categoryId", async (req, res) => {
   try {
     const categoryId = req.params.categoryId;
@@ -73,7 +73,7 @@ router.put("/:categoryId", async (req, res) => {
   }
 });
 
-// Kategori silme (Delete)
+//  Kategori silme (Delete)
 router.delete("/:categoryId", async (req, res) => {
   try {
     const categoryId = req.params.categoryId;

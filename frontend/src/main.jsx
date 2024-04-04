@@ -14,11 +14,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <BrowserRouter>
   <ScrollToTop />
     <CartProvider>
-  
       <Layout >
         <App />
       </Layout>
-   
     </CartProvider>
   </BrowserRouter>
 );

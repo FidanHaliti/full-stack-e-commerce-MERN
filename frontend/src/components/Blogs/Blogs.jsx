@@ -27,8 +27,8 @@ const Blogs = () => {
     fetchBlogs();
   }, [apiUrl]);
   return (
-    <section className="blogs">
-      <div className="container">
+    <section className="blogs" >
+      <div className="container" style={{marginTop:"20px"}}>
         <div className="section-title">
           <h2>From Our Blog</h2>
           <p>Summer Collection New Morden Design</p>

@@ -28,6 +28,8 @@ import CreateLogoPage from "./pages/Admin/Logos/CreateLogoPage";
 import UpdateLogoPage from "./pages/Admin/Logos/UpdateLogoPage";
 import CreateBlogPage from "./pages/Admin/Blogs/CreateBlogPage";
 import BlogPage from "./pages/Admin/Blogs/BlogPage";
+import BlogDetails from "./components/BlogDetails/BlogDetails";
+import Blogs from "./components/Blogs/Blogs";
 
 
 function App() {
@@ -35,7 +37,7 @@ function App() {
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/shop" element={<ShopPage />} />
-      <Route path="/blog" element={<BlogPage />} /> 
+      <Route path="/blog" element={<Blogs />} /> 
       <Route path="/contact" element={<ContactPage />} />
       <Route path="/cart" element={<CartPage />} />
       <Route path="/auth" element={<AuthPage />} />
@@ -51,7 +53,7 @@ function App() {
         <Route path="products" element={<ProductPage />} />
         <Route path="products/create" element={<CreateProductPage />} />
         <Route path="products/update/:id" element={<UpdateProductPage />} />
-        <Route path="blogs" element={<BlogPage />} />
+        <Route path="blogs/:id" element={<BlogPage />} />
         <Route path="blogs/create" element={<CreateBlogPage />} />
         
         <Route path="coupons" element={<CouponPage />} />
